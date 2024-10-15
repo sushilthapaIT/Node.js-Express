@@ -3,10 +3,13 @@
 
 '''
 1. Express Project Setup
+    => npm init
 '''
 
 '''
 2. Create Express Server
+    => npm install express
+    => npm i -D nodemon //it starts automatically server whenever we make changes
 '''
 
 '''
