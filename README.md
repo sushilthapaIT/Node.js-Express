@@ -14,10 +14,13 @@
 
 '''
 3. Express Project Setup
+    => Installed necessary packages
+    like dotenv
 '''
 
 '''
 4. Thunder Client Setup
+    => we are using thunder client (VS Code extension) for testing api cause its easy and does not have to switch here and there (new window).
 '''
 
 '''
