@@ -1,7 +1,6 @@
 //@desc Get all contacts
 //@route GET /api/contacts
 //@access public 
-
 const getContact = async (req, res) => { //api call
     res.status(200).json({message: "Get all contacts"})
 };
@@ -9,7 +8,6 @@ const getContact = async (req, res) => { //api call
 //@desc Create New Contacts
 //@route Post /api/contacts
 //@access public 
-
 const createContact = async (req, res) => { //to create
     console.log("The request body is" ,req.body);
     const {name, email, number} = req.body;
@@ -23,7 +21,6 @@ const createContact = async (req, res) => { //to create
 //@desc Get Contacts
 //@route GET /api/contacts
 //@access public 
-
 const getContacts = async (req, res) => { //route for individual contact
     res.status(200).json({message: `Get contacts for ${req.params.id}`})
 };
@@ -31,7 +28,6 @@ const getContacts = async (req, res) => { //route for individual contact
 //@desc Update New Contacts
 //@route PUT /api/contacts:id
 //@access public 
-
 const updateContact = async (req, res) => { //to update
     res.status(200).json({message: `Update contacts for ${req.params.id}`})
 };
@@ -39,7 +35,6 @@ const updateContact = async (req, res) => { //to update
 //@desc Delete Contacts
 //@route Delete /api/contacts:id
 //@access public 
-
 const deleteContact = async (req, res) => { //to update
     res.status(200).json({message: `Update contacts for ${req.params.id}`})
 };
