@@ -6,11 +6,11 @@ const Contact = require("../models/contactModel");
 //@access public 
 const getContact = asyncHandler(async(req, res) => { //api call
     const contact= await Contact.findById(req.params.id);
-    res.status(200).json({message: "Get all contacts"});
     if(!contact){
         res.status(404);
         throw new Error("Contact not found");
     }
+    res.status(200).json(contact);
 });
 
 //@desc Create New Contacts
