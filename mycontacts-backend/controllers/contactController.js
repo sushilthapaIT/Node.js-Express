@@ -1,16 +1,17 @@
 const asyncHandler = require("express-async-handler");
+const Contact = require("../models/contactModel");
 
 //@desc Get all contacts
 //@route GET /api/contacts
 //@access public 
-const getContact = asyncHandler((req, res) => { //api call
+const getContact = asyncHandler(async(req, res) => { //api call
     res.status(200).json({message: "Get all contacts"})
 });
 
 //@desc Create New Contacts
 //@route Post /api/contacts
 //@access public 
-const createContact = asyncHandler((req, res) => { //to create
+const createContact = asyncHandler(async(req, res) => { //to create
     console.log("The request body is" ,req.body);
     const {name, email, number} = req.body;
     if(!name || !email || !number){
@@ -23,21 +24,23 @@ const createContact = asyncHandler((req, res) => { //to create
 //@desc Get Contacts
 //@route GET /api/contacts
 //@access public 
-const getContacts = asyncHandler((req, res) => { //route for individual contact
-    res.status(200).json({message: `Get contacts for ${req.params.id}`})
+const getContacts = asyncHandler(async(req, res) => { //api call
+    const contacts = await Contact.find();
+    res.status(200).json(contacts);
 });
+
 
 //@desc Update New Contacts
 //@route PUT /api/contacts:id
 //@access public 
-const updateContact = asyncHandler((req, res) => { //to update
+const updateContact = asyncHandler(async(req, res) => { //to update
     res.status(200).json({message: `Update contacts for ${req.params.id}`})
 });
 
 //@desc Delete Contacts
 //@route Delete /api/contacts:id
 //@access public 
-const deleteContact = asyncHandler((req, res) => { //to update
+const deleteContact = asyncHandler(async(req, res) => { //to update
     res.status(200).json({message: `Update contacts for ${req.params.id}`})
 });
 
