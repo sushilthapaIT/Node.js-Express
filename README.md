@@ -37,6 +37,7 @@
 
 '''
 8. Mongoose Schema
+    => npm i mongoose
 '''
 
 '''
