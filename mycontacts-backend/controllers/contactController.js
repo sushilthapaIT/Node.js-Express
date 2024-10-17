@@ -5,7 +5,12 @@ const Contact = require("../models/contactModel");
 //@route GET /api/contacts
 //@access public 
 const getContact = asyncHandler(async(req, res) => { //api call
-    res.status(200).json({message: "Get all contacts"})
+    const contact= await Contact.findById(req.params.id);
+    res.status(200).json({message: "Get all contacts"});
+    if(!contact){
+        res.status(404);
+        throw new Error("Contact not found");
+    }
 });
 
 //@desc Create New Contacts
@@ -18,7 +23,12 @@ const createContact = asyncHandler(async(req, res) => { //to create
         res.status(400);
         throw new Error("All fields are mandatory.")
     }
-    res.status(201).json({message: "Create Contact"})
+    const contact = await Contact.create({
+        name,
+        email,
+        number,
+    });
+    res.status(201).json(contact);
 });
 
 //@desc Get Contacts
