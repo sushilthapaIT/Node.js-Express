@@ -13,7 +13,7 @@ router.post("/login", (req, res) => {
 });
 
 // Get current user info route
-router.post("/current", (req, res) => {
+router.get("/current", (req, res) => {
     res.json({ message: "Current user information" });
 });
 
