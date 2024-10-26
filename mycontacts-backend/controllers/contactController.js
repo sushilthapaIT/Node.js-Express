@@ -27,6 +27,7 @@ const createContact = asyncHandler(async(req, res) => { //to create
         name,
         email,
         number,
+        user_id: req.user_id,
     });
     res.status(201).json(contact);
 });
