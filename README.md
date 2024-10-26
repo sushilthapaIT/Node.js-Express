@@ -59,11 +59,12 @@
 '''
 13. Password Hashing and Comparing
 '''
-
+npm i bcrypt
 '''
 14. Sign/Verify JWT Token
 '''
-
+json web token
+=> npm i jsonwebtoken
 '''
 15. Handle Relationships
 '''
