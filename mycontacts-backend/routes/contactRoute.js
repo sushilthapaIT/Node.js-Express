@@ -9,6 +9,7 @@ const {getContacts, createContact, getContact, updateContact, deleteContact} = r
 // router.route('/:id').delete(deleteContact);
 
 //method chaining
+router.use(validateToken);
 router.route('/').get(getContacts).post(createContact);
 router.route('/:id').get(getContact).put(updateContact).delete(deleteContact);;
 
